@@ -2,23 +2,23 @@
 
 A modern, full-stack invoice management application built with FastAPI, React, and Supabase. Create, manage, and export professional invoices with ease.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+<!-- ![License](https://img.shields.io/badge/license-MIT-blue.svg) -->
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
 ![React](https://img.shields.io/badge/react-19-blue.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-green.svg)
 
 ## ✨ Features
 
-- 🔐 **Secure Authentication** - User registration and login with JWT tokens
-- 👥 **Client Management** - Store and manage client information
-- 📄 **Invoice Creation** - Build invoices with multiple line items
-- 💰 **Automatic Calculations** - Subtotal, tax, and total computed automatically
-- 📊 **Status Tracking** - Track invoices through draft, sent, paid, and overdue states
-- 📑 **PDF Export** - Generate professional PDF invoices with ReportLab
-- 🔒 **Data Security** - Row Level Security ensures users only see their own data
-- ✅ **Comprehensive Testing** - 48 passing tests with property-based testing
+- **Secure Authentication** - User registration and login with JWT tokens
+- **Client Management** - Store and manage client information
+- **Invoice Creation** - Build invoices with multiple line items
+- **Automatic Calculations** - Subtotal, tax, and total computed automatically
+- **Status Tracking** - Track invoices through draft, sent, paid, and overdue states
+- **PDF Export** - Generate professional PDF invoices with ReportLab
+- **Data Security** - Row Level Security ensures users only see their own data
+- **Comprehensive Testing** - 48 passing tests with property-based testing
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────┐
@@ -43,7 +43,7 @@ A modern, full-stack invoice management application built with FastAPI, React, a
 └─────────────────────────────────────┘
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -55,7 +55,7 @@ A modern, full-stack invoice management application built with FastAPI, React, a
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/princ0301/Invoice_Generator.git
 cd Invoice_Generator
 ```
 
@@ -148,17 +148,11 @@ Invoice_Generator/
 │   │   └── types/             # TypeScript types
 │   └── package.json           # Dependencies
 │
-├── .kiro/specs/               # Feature Specifications
-│   └── invoice-generator/
-│       ├── requirements.md    # Requirements
-│       ├── design.md          # Design document
-│       └── tasks.md           # Implementation tasks
-│
 ├── .gitignore                 # Git ignore rules
 └── README.md                  # This file
 ```
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Backend
 - **[FastAPI](https://fastapi.tiangolo.com/)** - Modern Python web framework
@@ -181,7 +175,7 @@ Invoice_Generator/
 - **Row Level Security (RLS)** for data isolation
 - **Automatic timestamps** and audit trails
 
-## 📚 API Documentation
+## API Documentation
 
 Once the backend is running, visit:
 
@@ -218,7 +212,7 @@ POST   /api/invoices/{id}/pay   Mark invoice as paid
 GET    /api/invoices/{id}/pdf   Export invoice as PDF
 ```
 
-## 🧪 Testing
+## Testing
 
 ### Run All Tests
 
@@ -227,76 +221,7 @@ cd backend
 uv run pytest tests/ -v
 ```
 
-### Run Specific Test Types
-
-```bash
-# Unit tests
-uv run pytest tests/test_models.py -v
-
-# Property-based tests
-uv run pytest tests/test_properties.py -v
-
-# PDF export tests
-uv run pytest tests/test_pdf_export.py -v
-
-# Integration tests
-uv run pytest tests/test_integration.py -v
-```
-
-### Test Coverage
-
-- **48 tests passing** ✅
-- **11 tests skipped** (require live Supabase setup)
-- **0 failures** ✅
-
-Test types:
-- **Unit Tests**: Domain models validation
-- **Property-Based Tests**: 16 properties with 100+ iterations each
-- **PDF Tests**: PDF generation and validation
-- **Integration Tests**: End-to-end workflows
-
-## 🔧 Development
-
-### Backend Development
-
-```bash
-cd backend
-
-# Run with auto-reload
-uv run uvicorn app.main:app --reload
-
-# Run tests
-uv run pytest
-
-# Run tests with coverage
-uv run pytest --cov=app tests/
-
-# Format code
-uv run black app/ tests/
-
-# Lint code
-uv run ruff check app/ tests/
-```
-
-### Frontend Development
-
-```bash
-cd frontend
-
-# Run development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
-# Lint code
-npm run lint
-```
-
-## 🗄️ Database Schema
+## Database Schema
 
 The application uses three main tables:
 
@@ -318,7 +243,7 @@ The application uses three main tables:
 
 See `backend/migrations/001_initial_schema.sql` for complete schema.
 
-## 🔐 Security
+## Security
 
 - **JWT Authentication**: Secure token-based authentication
 - **Row Level Security**: Users can only access their own data
@@ -327,76 +252,11 @@ See `backend/migrations/001_initial_schema.sql` for complete schema.
 - **Input Validation**: Pydantic models validate all inputs
 - **SQL Injection Protection**: Parameterized queries via Supabase
 
-## 📊 Code Statistics
-
-- **Total Lines**: 4,397 lines
-- **Backend**: 2,665 lines (Python)
-- **Frontend**: 1,732 lines (TypeScript/React)
-- **Database**: 120 lines (SQL)
-- **Test Coverage**: 113% (test-to-code ratio)
-
-## 🚢 Deployment
-
-### Backend Deployment
-
-1. **Set environment variables** on your hosting platform
-2. **Run database migrations** in Supabase
-3. **Deploy FastAPI app** (Heroku, Railway, Render, etc.)
-
-```bash
-# Example for production
-uvicorn app.main:app --host 0.0.0.0 --port $PORT
-```
-
-### Frontend Deployment
-
-1. **Build the frontend**:
-   ```bash
-   npm run build
-   ```
-
-2. **Deploy `dist/` folder** to:
-   - Vercel
-   - Netlify
-   - AWS S3 + CloudFront
-   - Any static hosting service
-
-3. **Update environment variables** with production API URL
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Built with [FastAPI](https://fastapi.tiangolo.com/)
 - UI powered by [React](https://react.dev/)
 - Database by [Supabase](https://supabase.com/)
 - PDF generation by [ReportLab](https://www.reportlab.com/)
 - Testing with [Hypothesis](https://hypothesis.readthedocs.io/)
-
-## 📧 Support
-
-For support, email support@example.com or open an issue in the repository.
-
-## 🗺️ Roadmap
-
-- [ ] Email invoice delivery
-- [ ] Recurring invoices
-- [ ] Payment tracking
-- [ ] Multi-currency support
-- [ ] Invoice templates
-- [ ] Dashboard analytics
-- [ ] Mobile app
-
----
-
-**Made with ❤️ using FastAPI, React, and Supabase**
+ 
